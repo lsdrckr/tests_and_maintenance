@@ -1622,7 +1622,7 @@
     (property "Value" "C_Polarized" (id 1) (at 43.18 24.13 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (id 2) (at 49.2252 33.02 0)
+    (property "Footprint" "Capacitor_SMD:C_0201_0603Metric" (id 2) (at 49.2252 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 48.26 29.21 0)
@@ -2500,7 +2500,7 @@
       (reference "#PWR0122") (unit 1) (value "GND") (footprint "")
     )
     (path "/2d7759f0-2416-4be2-9d1b-def3393dac33"
-      (reference "1uF1") (unit 1) (value "C_Polarized") (footprint "")
+      (reference "1uF1") (unit 1) (value "C_Polarized") (footprint "Capacitor_SMD:C_0201_0603Metric")
     )
     (path "/6c46b9fc-67e9-4026-b550-82f385903331"
       (reference "C1") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0201_0603Metric")
