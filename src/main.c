@@ -14,16 +14,5 @@
 
 int main(void)
 {
-    RCC_APB2ENR |= RCC_IOPCEN;       /* Clock configuration  */
-    GPIOC_CRH &= 0xFF0FFFFF;         /* Port configuration   */
-    GPIOC_CRH |= 0x00200000;
 
-    while(1)
-    {
-        GPIOC_ODR |= GPIOC13;        /* GPIOC13 is ON        */
-        for (int i = 0; i < 500000; i++); /* arbitrary delay */
-
-        GPIOC_ODR &= ~GPIOC13;       /* GPIOC13 is OFF       */
-        for (int i = 0; i < 500000; i++); /* arbitrary delay */
-    }
 }

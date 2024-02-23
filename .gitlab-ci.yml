@@ -19,7 +19,7 @@ job_build:
   stage: build
   script:
    # - make tests
-    - make main
+    - make src/final.elf
   when: always
   artifacts:
     paths:
