@@ -1,5 +1,5 @@
 CC=arm-none-eabi-gcc
-MACH=cortex-m4
+MACH=cortex-m0
 CFLAGS= -c -mcpu=$(MACH) -mthumb -std=gnu11 -O0 -Wall
 LDFLAGS= -T src/stm32_ls.ld -nostdlib -Wl,-Map=final.map
 
@@ -13,3 +13,8 @@ src/final.elf: src/main.o src/stm32_startup.o
 
 clean:
 	rm -rf src/*.o src/*.elf
+	
+
+load:
+	openocd -f /board/bluepill.cfg
+
