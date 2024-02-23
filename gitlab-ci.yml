@@ -1,0 +1,34 @@
+image: debian
+before_script:
+  - apt-get update -y
+  - apt-get upgrade -y
+  - apt-get install -y clang-tidy make check cppcheck clang lcov llvm valgrind libcppunit-subunit-dev clang-format clang-tools
+
+stages :
+  - check
+  - build
+  - lint
+  
+job_check_tidy:
+  stage: check
+  script: clang-tidy src/*.c -- -Iincludes
+  when: always
+
+job_check_cppcheck:
+  stage: check
+  script: cppcheck --enable=warning,style,portability src/*.c
+  when: always
+
+job_build:
+  stage: build
+  script:
+    - make tests
+    - make main
+  when: always
+  artifacts:
+    paths:
+      - build/
+
+job_lint:
+  stage: lint
+  script: clang-format -i src/*.c
