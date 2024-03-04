@@ -7,6 +7,11 @@ En regardant au microscope et en testant, on a remarqué quelques courts-circuit
 
 Nous avons cependant fait un grave erreur dès le schematic de notre carte : nous avons connecté les ports SWCLK et SWDIO sur les mauvais ports, ce qui empêchait le bon fonctionnement de la carte... Nous avons dû improvisé en créant des pistes volantes pour bien les connecter.
 
+<div style="text-align:center;">
+  <img src="Image_PCB_Changement.png.jpg" alt="PCB apèrs correction" width="480" height="270">
+</div>
+
+
 ## Tests informatiques
 
 A l'aide de la documentation fournis sur le site : https://linuxembedded.fr/2021/02/bare-metal-from-zero-to-blink, nous avons réaliser un Startup file nommé stm32_startup.c permettant de bien définir l'environnement pour le code main().
