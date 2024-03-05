@@ -2,7 +2,7 @@ image: debian
 before_script:
   - apt-get update -y
   - apt-get upgrade -y
-  - apt-get install -y clang-tidy make check cppcheck clang lcov llvm valgrind libcppunit-subunit-dev clang-format clang-tools
+  - apt-get install -y clang-tidy make check cppcheck clang lcov llvm valgrind libcppunit-subunit-dev clang-format clang-tools gcc-arm-none-eabi
 
 stages :
   - check
@@ -19,7 +19,7 @@ job_build:
   stage: build
   script:
    # - make tests
-    - make src/final.elf
+    - make
   when: always
   artifacts:
     paths:
